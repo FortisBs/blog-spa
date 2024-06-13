@@ -1,0 +1,3 @@
+<app-input label="Filter by keywords" [debounce]="1000" (valueChange)="searchValue = $event"></app-input>
+
+<app-articles-list class="articles" [searchKeywords]="searchValue"></app-articles-list>

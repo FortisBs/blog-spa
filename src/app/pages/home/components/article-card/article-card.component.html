@@ -1,0 +1,20 @@
+<div class="article">
+  <div class="article-image">
+    <img [src]="article.image_url" alt="Article image">
+  </div>
+
+  <div class="article-body">
+    <p class="article-date">
+      <img class="icon" src="assets/icons/calendar.svg" alt="Calendar icon">
+      {{ article.published_at | date }}
+    </p>
+    <h2 class="article-title" [innerHTML]="article.title | highlightKeywords: searchKeywords"></h2>
+    <p class="article-summary"
+       [innerHTML]="article.summary | limitCharacters: 100 | highlightKeywords: searchKeywords"
+    ></p>
+    <a class="article-link" [routerLink]="['/article', article.id]">
+      Read more
+      <img class="icon" src="assets/icons/arrow-right.svg" alt="Arrow right icon">
+    </a>
+  </div>
+</div>

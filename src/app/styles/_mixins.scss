@@ -1,0 +1,7 @@
+@import 'variables';
+
+@mixin primaryBorders {
+  border: $border;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}

@@ -1,0 +1,52 @@
+@import 'mixins';
+@import 'variables';
+
+.article {
+  padding-top: 100px;
+
+  &-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 245px;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  &-content {
+    margin-bottom: 35px;
+    padding: 35px 75px 50px;
+    background-color: white;
+    @include primaryBorders;
+  }
+
+  &-title {
+    margin-bottom: 50px;
+    font-size: 24px;
+    font-weight: 400;
+    color: $primary-font-color;
+    text-align: center;
+  }
+
+  &-text {
+    font-size: 18px;
+    line-height: 27px;
+
+    & > p {
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &-link {
+    margin-left: 75px;
+
+    .icon {
+      margin-right: 5px;
+    }
+  }
+}

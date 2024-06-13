@@ -1,0 +1,20 @@
+@if (articlesData$ | async; as articlesData) {
+  <section>
+    <p class="results-count">Results: {{ articlesData.count }}</p>
+    <hr>
+
+    <div class="articles-wrapper">
+      @for (article of articlesData.results; track article.id) {
+        <app-article-card [article]="article" [searchKeywords]="keywords"></app-article-card>
+      } @empty {
+        There are no items with the given keywords.
+      }
+    </div>
+
+    @if (articlesData.next) {
+      <button class="btn-load-more" (click)="loadMore()">Load more</button>
+    }
+  </section>
+} @else {
+  Loading...
+}
